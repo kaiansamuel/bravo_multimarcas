@@ -1,0 +1,26 @@
+<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Símbolo: etiqueta de preço com furo -->
+  <g>
+    <path d="M20 40 L85 40 L110 80 L85 120 L20 120 Z" fill="#F3EFE7" />
+    <circle cx="38" cy="58" r="7" fill="#17130F" />
+    <circle cx="38" cy="58" r="7" fill="none" stroke="#E8B84B" stroke-width="2" />
+  </g>
+
+  <!-- Wordmark -->
+  <text x="140" y="78" font-family="'Oswald', sans-serif" font-weight="700"
+        font-size="46" letter-spacing="1" fill="#F3EFE7">BRAVO</text>
+  <text x="141" y="104" font-family="'IBM Plex Mono', monospace" font-weight="500"
+        font-size="15" letter-spacing="4" fill="#A79C89">MULTIMARCAS</text>
+
+  <!-- código de barras -->
+  <g fill="#E8B84B">
+    <rect x="380" y="30" width="3" height="40" />
+    <rect x="387" y="30" width="1.5" height="40" />
+    <rect x="392" y="30" width="4" height="40" />
+    <rect x="400" y="30" width="1.5" height="40" />
+    <rect x="405" y="30" width="2.5" height="40" />
+    <rect x="412" y="30" width="4" height="40" />
+    <rect x="420" y="30" width="1.5" height="40" />
+    <rect x="425" y="30" width="3" height="40" />
+  </g>
+</svg>
