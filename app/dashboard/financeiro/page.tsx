@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { db } from "@/db";
 import { financeiroLancamentos, lojas } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
@@ -9,10 +10,12 @@ export default async function FinanceiroPage({
   searchParams: Promise<{ loja?: string }>;
 }) {
   const session = await getSession();
+  if (!session) redirect("/login");
+
   const { loja } = await searchParams;
 
   const lojaFiltro =
-    session?.papel === "operador" ? session.lojaId : loja || null;
+    session.papel === "operador" ? session.lojaId : loja || null;
 
   const conditions = [];
   if (lojaFiltro) conditions.push(eq(financeiroLancamentos.lojaId, lojaFiltro));

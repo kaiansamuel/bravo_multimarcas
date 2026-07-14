@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { db } from "@/db";
 import { lojas, estoque, financeiroLancamentos } from "@/db/schema";
 import { getSession } from "@/lib/session";
@@ -9,6 +10,8 @@ export default async function DashboardPage({
   searchParams: Promise<{ loja?: string }>;
 }) {
   const session = await getSession();
+  if (!session) redirect("/login");
+
   const { loja } = await searchParams;
 
   // Determinar filtro de loja

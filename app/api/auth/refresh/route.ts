@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { usuarios } from "@/db/schema";
+import { usuarios, refreshTokensRevogados } from "@/db/schema";
 import {
   verifyRefreshToken,
   generateAccessToken,
@@ -18,6 +18,20 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    // Verificar se o token foi revogado
+    const [revogado] = await db
+      .select()
+      .from(refreshTokensRevogados)
+      .where(eq(refreshTokensRevogados.token, refreshToken))
+      .limit(1);
+
+    if (revogado) {
+      return NextResponse.json(
+        { error: "Refresh token revogado." },
+        { status: 401 }
+      );
+    }
+
     const { userId } = verifyRefreshToken(refreshToken);
 
     const [user] = await db

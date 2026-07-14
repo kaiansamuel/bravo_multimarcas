@@ -49,6 +49,12 @@ export const estoque = pgTable(
   (t) => [unique().on(t.produtoId, t.lojaId)]
 );
 
+export const refreshTokensRevogados = pgTable("refresh_tokens_revogados", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  token: text("token").notNull(),
+  revogadoEm: timestamp("revogado_em", { withTimezone: true }).defaultNow(),
+});
+
 export const financeiroLancamentos = pgTable("financeiro_lancamentos", {
   id: uuid("id").defaultRandom().primaryKey(),
   lojaId: uuid("loja_id")

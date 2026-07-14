@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { db } from "@/db";
 import { estoque, produtos, lojas } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
@@ -11,10 +12,12 @@ export default async function EstoquePage({
   searchParams: Promise<{ loja?: string; categoria?: string }>;
 }) {
   const session = await getSession();
+  if (!session) redirect("/login");
+
   const { loja, categoria } = await searchParams;
 
   const lojaFiltro =
-    session?.papel === "operador" ? session.lojaId : loja || null;
+    session.papel === "operador" ? session.lojaId : loja || null;
 
   const conditions = [];
   if (lojaFiltro) conditions.push(eq(estoque.lojaId, lojaFiltro));
