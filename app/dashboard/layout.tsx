@@ -5,6 +5,7 @@ import { db } from "@/db";
 import { lojas } from "@/db/schema";
 import StoreSwitcher from "@/components/StoreSwitcher";
 import LogoutButton from "@/components/LogoutButton";
+import NavLink from "@/components/NavLink";
 
 export default async function DashboardLayout({
   children,
@@ -39,13 +40,7 @@ export default async function DashboardLayout({
             </Link>
             <nav className="hidden items-center gap-1 md:flex">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded px-3 py-1.5 text-sm text-paper-muted transition-colors hover:bg-charcoal-800 hover:text-paper"
-                >
-                  {link.label}
-                </Link>
+                <NavLink key={link.href} href={link.href} label={link.label} />
               ))}
             </nav>
           </div>
@@ -62,13 +57,7 @@ export default async function DashboardLayout({
         {/* Mobile nav */}
         <nav className="flex gap-1 overflow-x-auto border-t border-charcoal-700 px-6 py-2 md:hidden">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="whitespace-nowrap rounded px-3 py-1.5 text-sm text-paper-muted transition-colors hover:bg-charcoal-800 hover:text-paper"
-            >
-              {link.label}
-            </Link>
+            <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
         </nav>
       </header>

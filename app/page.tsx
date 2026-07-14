@@ -45,7 +45,7 @@ export default function Home() {
               </p>
               <Link
                 href="/login"
-                className="mt-8 inline-block rounded bg-gold px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide text-charcoal-950 transition-colors hover:bg-gold-dim"
+                className="mt-8 inline-block rounded bg-gold px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide text-charcoal-950 transition-colors hover:bg-gold-dim focus:outline-none focus:ring-2 focus:ring-gold/40 focus:ring-offset-2 focus:ring-offset-charcoal-950"
               >
                 Acessar sistema
               </Link>

@@ -27,7 +27,7 @@ export default function StoreSwitcher({ lojas }: { lojas: Loja[] }) {
     <select
       value={lojaAtual}
       onChange={handleChange}
-      className="rounded border border-charcoal-700 bg-charcoal-800 px-3 py-1.5 text-sm text-paper focus:border-gold focus:outline-none"
+      className="cursor-pointer rounded border border-charcoal-700 bg-charcoal-800 px-3 py-2 text-sm text-paper focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40"
     >
       <option value="">Todas as lojas</option>
       {lojas.map((loja) => (

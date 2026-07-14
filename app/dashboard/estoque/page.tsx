@@ -59,7 +59,7 @@ export default async function EstoquePage({
           <div className="flex gap-2">
             <a
               href="/dashboard/estoque"
-              className={`rounded px-3 py-1.5 text-sm transition-colors ${
+              className={`rounded px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-gold/40 ${
                 !categoria
                   ? "bg-gold text-charcoal-950"
                   : "border border-charcoal-700 text-paper-muted hover:text-paper"
@@ -71,7 +71,7 @@ export default async function EstoquePage({
               <a
                 key={cat}
                 href={`/dashboard/estoque?categoria=${encodeURIComponent(cat!)}`}
-                className={`rounded px-3 py-1.5 text-sm transition-colors ${
+                className={`rounded px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-gold/40 ${
                   categoria === cat
                     ? "bg-gold text-charcoal-950"
                     : "border border-charcoal-700 text-paper-muted hover:text-paper"
