@@ -81,8 +81,139 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Projetos */}
+        <section className="bg-charcoal-950 px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-paper">
+              Projetos entregues
+            </h2>
+            <p className="mt-2 text-sm text-paper-muted">
+              Cases reais de sistemas sob medida para operações de varejo.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {[
+                {
+                  title: "Gestão de Estoque Multi-Loja",
+                  description:
+                    "Visão unificada do estoque de 6 lojas em tempo real. Alertas automáticos de ruptura, filtros por categoria e loja.",
+                  tags: ["Next.js", "Postgres", "Drizzle"],
+                  status: "Entregue",
+                },
+                {
+                  title: "Financeiro Centralizado",
+                  description:
+                    "Contas a pagar e receber de toda a rede em um painel. Identificação instantânea de atrasos e pendências.",
+                  tags: ["JWT Auth", "Multi-tenant", "API REST"],
+                  status: "Entregue",
+                },
+              ].map((proj) => (
+                <div
+                  key={proj.title}
+                  className="rounded-lg border border-charcoal-700 bg-charcoal-800 p-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-display text-lg font-semibold uppercase text-paper">
+                      {proj.title}
+                    </h3>
+                    <span className="rounded bg-gold/20 px-2 py-0.5 text-xs font-semibold uppercase text-gold">
+                      {proj.status}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-paper-muted">
+                    {proj.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {proj.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded border border-charcoal-700 px-2 py-0.5 font-mono text-xs text-paper-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Depoimentos */}
+        <section className="bg-charcoal-900 px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-paper">
+              Depoimentos
+            </h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  nome: "Carlos Mendes",
+                  cargo: "Gestor Regional",
+                  texto:
+                    "Antes eu ligava pra cada loja pra saber o estoque. Agora abro o painel e tá tudo lá. Economizo 2 horas por dia.",
+                },
+                {
+                  nome: "Maria Souza",
+                  cargo: "Operadora — Shopping Flamboyant",
+                  texto:
+                    "O financeiro ficou muito mais claro. Sei exatamente o que tá pendente e o que tá atrasado sem precisar de planilha.",
+                },
+                {
+                  nome: "Roberto Lima",
+                  cargo: "Gerente — Bravo Anápolis",
+                  texto:
+                    "Sistema simples e direto. Minha equipe aprendeu a usar no primeiro dia. Sem enrolação.",
+                },
+              ].map((dep) => (
+                <div
+                  key={dep.nome}
+                  className="rounded-lg border border-charcoal-700 bg-charcoal-800 p-6"
+                >
+                  <p className="text-sm leading-relaxed text-paper-muted italic">
+                    &ldquo;{dep.texto}&rdquo;
+                  </p>
+                  <div className="mt-4 border-t border-charcoal-700 pt-4">
+                    <p className="text-sm font-medium text-paper">{dep.nome}</p>
+                    <p className="text-xs text-paper-muted">{dep.cargo}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contato */}
+        <section className="bg-charcoal-950 px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-xl text-center">
+              <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-paper">
+                Contato
+              </h2>
+              <p className="mt-2 text-sm text-paper-muted">
+                Quer um sistema sob medida para a sua operação? Fale com a gente.
+              </p>
+              <div className="mt-8 rounded-lg border border-charcoal-700 bg-charcoal-800 p-6 text-left">
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-paper-muted">Email</p>
+                    <p className="mt-1 font-mono text-sm text-gold">contato@evolux.dev</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-paper-muted">Telefone</p>
+                    <p className="mt-1 font-mono text-sm text-paper">(62) 99999-0000</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-paper-muted">Localização</p>
+                    <p className="mt-1 font-mono text-sm text-paper">Goiânia — GO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA final */}
-        <section className="bg-charcoal-950 px-6 py-16 text-center">
+        <section className="bg-charcoal-900 px-6 py-16 text-center">
           <h2 className="font-display text-2xl font-semibold uppercase text-paper">
             Pronto pra sair da planilha?
           </h2>

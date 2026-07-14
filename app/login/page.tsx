@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -96,6 +97,15 @@ export default function LoginPage() {
         <p className="mt-6 text-center text-xs text-paper-muted">
           Acesso restrito a funcionários da rede Bravo Multimarcas.
         </p>
+
+        <div className="mt-4 text-center">
+          <Link
+            href="/"
+            className="text-sm text-paper-muted transition-colors hover:text-gold"
+          >
+            &larr; Voltar para a home
+          </Link>
+        </div>
       </div>
     </div>
   );
