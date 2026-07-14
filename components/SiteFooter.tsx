@@ -6,7 +6,7 @@ export default function SiteFooter() {
           Bravo Multimarcas &mdash; Sistema de gestão interna.
         </p>
         <p className="mt-1">
-          Case de portfólio{" "}
+          2026 Desenvolvido por{" "}
           <span className="text-gold">Evolux</span>.
         </p>
       </div>
